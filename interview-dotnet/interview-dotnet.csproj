@@ -9,10 +9,27 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="7.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="7.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.4" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Models\" />
+    <None Remove="Microsoft.Data.Sqlite.Core" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Microsoft.EntityFrameworkCore.Sqlite.Core" />
+    <None Remove="Microsoft.EntityFrameworkCore.Design" />
+    <None Remove="SQLitePCLRaw.bundle_e_sqlite3" />
+  </ItemGroup>
 </Project>

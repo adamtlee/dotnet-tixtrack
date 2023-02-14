@@ -1,3 +1,6 @@
+using interview_dotnet.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+SQLitePCL.Batteries.Init();
+builder.Services.AddDbContext<ContactsContext>(options => options.UseSqlite("Data Source=contacts.db"));
 
 var app = builder.Build();
 
