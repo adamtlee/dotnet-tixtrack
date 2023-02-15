@@ -13,6 +13,16 @@ namespace interview_dotnet.Controllers
     [Route("api/v1/file")]
     public class FileController : ControllerBase
     {
+
+        /// <summary>
+        /// Accepts a file as an IFormFile and reads the contents of the file using a StreamReader.
+        /// </summary>
+        /// <param name="file">The file to be read.</param>
+        /// <returns>
+        /// An Ok response with the contents of the file as a string, or an appropriate error message
+        /// if an error occurs while reading the file.
+        /// </returns>
+    
         [HttpPost]
         public async Task<IActionResult> PostFile(IFormFile file)
         {
